@@ -1,0 +1,7 @@
+module bus_mux #(parameter word_size = 32)(
+	input [word_size-1:0]	dat_in1, dat_in2, dat_in3, dat_in4, dat_in5, dat_in6, dat_in7, dat_in8, dat_in9, dat_in10, dat_in11, dat_in12, dat_in13, dat_in14, 
+									dat_in15, dat_in16, dat_in17, dat_in18, dat_in19, dat_in20, dat_in21, dat_in22, dat_in23, dat_in24,
+	input [word_size-1:0]   sel1, sel2, sel3, sel4, sel5,
+	output[word_size-1:0]  dat_out_mux
+);
+

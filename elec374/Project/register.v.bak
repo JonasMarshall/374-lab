@@ -1,0 +1,8 @@
+module register0_32 (input [31:0] r0_in, r0_clr, clk, output [31:0] r0_out);
+	always @ (posedge clk)begin
+		if (r0_clr == 1'b1)begin
+			r0_out <= 0;
+		end
+		r0_out <= r0_in;
+	end
+endmodule

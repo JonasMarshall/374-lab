@@ -1,0 +1,8 @@
+module regZ (input [31:0] Z_in, Z_clr, clk, output [31:0] Z_out);
+	always @ (posedge clk)begin
+		if (Z_clr == 1'b1)begin
+			Z_out <= 0;
+		end
+		Z_out <= Z_in;
+	end
+endmodule

@@ -1,0 +1,28 @@
+`timescale  1ns/10ps
+module reg_tb;
+
+	reg[31:0] reg_in ;
+	reg reg_clr, clk;
+	wire[31:0] reg_out ;
+
+	reg reg_instance(reg_in, reg_clr, clk, reg_out)
+	
+	
+	always
+			#5 clk = ~clk;	
+	
+	initial
+		begin
+		clk =0;
+		wr_en =1;
+		data
+		
+		
+		input reg_in = 2 ;
+		input reg_clr = 0 ;
+		output reg_out = 3;
+		
+		end
+	
+	
+endmodule

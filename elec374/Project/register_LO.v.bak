@@ -1,0 +1,8 @@
+module regLO (input [31:0] LO_in, LO_clr, clk, output [31:0] LO_out);
+	always @ (posedge clk)begin
+		if (LO_clr == 1'b1)begin
+			LO_out <= 0;
+		end
+		LO_out <= LO_in;
+	end
+endmodule

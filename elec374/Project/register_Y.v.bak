@@ -1,0 +1,8 @@
+module regY (input [31:0] Y_in, Y_clr, clk, output [31:0] Y_out);
+	always @ (posedge clk)begin
+		if (Y_clr == 1'b1)begin
+			Y_out <= 0;
+		end
+		Y_out <= Y_in;
+	end
+endmodule

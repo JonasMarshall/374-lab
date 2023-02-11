@@ -1,0 +1,8 @@
+module regMAR (input [31:0] MAR_in, MAR_clr, clk, output [31:0] MAR_out);
+	always @ (posedge clk)begin
+		if (MAR_clr == 1'b1)begin
+			MAR_out <= 0;
+		end
+		MAR_out <= MAR_in;
+	end
+endmodule

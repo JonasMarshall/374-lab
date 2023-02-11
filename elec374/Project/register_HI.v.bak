@@ -1,0 +1,8 @@
+module regHI (input [31:0] HI_in, HI_clr, clk, output [31:0] HI_out);
+	always @ (posedge clk)begin
+		if (HI_clr == 1'b1)begin
+			HI_out <= 0;
+		end
+		HI_out <= HI_in;
+	end
+endmodule
