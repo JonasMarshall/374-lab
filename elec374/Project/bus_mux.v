@@ -3,16 +3,17 @@ module bus_mux #(parameter word_size = 32)(
 									dat_in9, dat_in10, dat_in11, dat_in12, dat_in13, dat_in14, dat_in15,
 	input [word_size-1:0]   in_HI, in_LO, in_Z_HI, in_Z_LO, in_PC,	in_MDR, in_Inport, C_sign_extended,							
 	input [4:0]   				sel,
-	input enable,
+	input 						enable,
 	output[word_size-1:0]  	dat_out_mux
 );
 
 	reg [31:0] mux_int;
 	assign data_out_mux = enable ? mux_int:32'bz;
+	
 	always @ (dat_in0, dat_in1, dat_in2, dat_in3, dat_in4, dat_in5, dat_in6, dat_in7, dat_in8, 
 									dat_in9, dat_in10, dat_in11, dat_in12, dat_in13, dat_in14, dat_in15,
 									in_HI, in_LO, in_Z_HI, in_Z_LO, in_PC,	in_MDR, in_Inport, C_sign_extended, sel)
-									
+	//Should this all be a trigger for bus mux ^								
 	case (sel)
 	0:		mux_int = dat_in0;
 	1:		mux_int = dat_in1;

@@ -1,7 +1,6 @@
 module bus_encoder #(parameter word_size = 32)(output reg[4:0]Code, output valid_data, input[31:0]Data);
 	assign valid_data = |Data;
-	always @ (Data)
-		begin
+	always @ (Data) begin
 			if(Data[23])Code = 23; else
 			if(Data[22])Code = 22; else
 			if(Data[21])Code = 21; else
