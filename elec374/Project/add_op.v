@@ -12,7 +12,7 @@ module add_op(
   reg carry;
 	generate
     for (x=0; x<32; x=x+1) begin
-      fulladder new inst(
+      fulladder_op inst(
         .a(a[x]), 
         .b(b[x]),
         .c_in(c_in),
