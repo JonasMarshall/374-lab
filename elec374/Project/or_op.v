@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module and_32_bit(
+module or_op(
 	input wire [31:0] Ra,
 	input wire [31:0] Rb,
 	output wire [31:0] Rz
