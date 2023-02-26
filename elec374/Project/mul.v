@@ -1,27 +1,16 @@
-<<<<<<< Updated upstream
-module mul (input [31:0] multiplicand_a, multiplicand_b, output [63:0] prod_z);
-/*	
-	reg [1:0] booth_bit;
-	reg [63:0] partial_prod;
-=======
 module mul (input wire signed[31:0] multiplicand_a, multiplier_b, output wire signed[63:0] prod_z);
 	
 	reg [32:0] booth_temp_array;
 	reg signed [63:0] booth_multiplicand;
 	reg signed [63:0] partial_prod;
->>>>>>> Stashed changes
+
 	
 	initial begin		
 		partial_prod = 0;
 		booth_temp_array = multiplier_b<<1;
 		booth_multiplicand = multiplicand_a;
 	end
-	
-<<<<<<< Updated upstream
-	always @ (posedge clk)begin
-*/
-endmodule
-=======
+
 	always @ (multiplicand_a or multiplier_b)begin
 		
 		integer i;
@@ -58,5 +47,3 @@ endmodule
 	end
 	assign prod_z = partial_prod;
 endmodule
-		
->>>>>>> Stashed changes
