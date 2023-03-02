@@ -7,7 +7,7 @@ module not_op(
 	
 	genvar x;
 	generate
-    for (x=0; x<32; x=x+1) begin : loop
+    for (x=0; x<32; x=x+1) begin:
       if ((Ra[x]) == 1)
         assign Rz[x] = 0;
       else 
