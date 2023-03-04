@@ -1,0 +1,42 @@
+module fulladder_op (input a,b, c_in, output reg c_out, s);
+
+reg t1, t2, t3, t4, TC, TOR, TS;
+reg nota, notb, notc;
+
+//
+and_op a1(.a(c_in), .b(b), .z(t1));
+and_op a2(.a(a), .b(c_in), .z(t2));
+and_op a3(.a(a), .b(b), .z(t3));
+
+or_op o1(.a(t1), .b(t2), .z(t4));
+or_op o2(.a(t4), .b(t3), .z(tC));
+
+//
+not_op n1(.a(a),.b(nota));
+not_op n2(.a(b),.b(notb));
+not_op n3(.a(c_in),.b(notc));
+
+and_op a4(.a(nota), .b(notb), .z(t1));
+and_op a5(.a(t1), .b(c_in), .z(t2));
+
+and_op a6(.a(nota), .b(b), .z(t3));
+and_op a7(.a(t3), .b(notc), .z(t4));
+
+or_op o3(.a(t2), .b(t4), .z(TOR));
+
+and_op a8(.a(a), .b(b), .z(t1));
+and_op a9(.a(t1), .b(c), .z(t2));
+
+or_op o4(.a(TOR), .b(t2), .z(TOR));
+
+and_op a10(.a(a), .b(notb), .z(t1));
+and_op a11(.a(t1), .b(c), .z(t2));
+
+or_op o5(.a(TOR), .b(t2), .z(TS));
+
+always @(*)
+  begin
+    c_out <= TC;
+    s <= TS;
+  end
+endmodule
